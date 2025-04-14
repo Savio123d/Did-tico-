@@ -1,4 +1,4 @@
-# Projetos JavaScript 
+# Projetos JavaScript
 
 ---
 
@@ -14,14 +14,18 @@
        onclick="quebrarLampada()">   <!-- Quando clicar na imagem -->
   ```
 
-### `id`, `class`, `input`, `button`, `p`
+### `id`, `class`, `input`, `button`, `p`, `label`, `select`, `textarea`
 - `id`: Identifica um único elemento na página.
 - `class`: Aplica estilos a múltiplos elementos com a mesma classe.
-- `input`: Permite entrada de dados pelo usuário.
+- `input`: Permite entrada de dados pelo usuário (pode ser texto, número, etc).
 - `button`: Cria botões clicáveis para executar ações.
 - `p`: Define um parágrafo de texto.
+- `label`: Associa texto a um campo de formulário.
+- `select`: Cria uma lista suspensa.
+- `textarea`: Permite entrada de texto com múltiplas linhas.
 - **Exemplo:**
   ```html
+  <label for="entrada">Nome:</label>
   <input type="text" id="entrada" placeholder="Digite algo">
   <button onclick="mostrarMensagem()">Clique</button>
   <p id="saida"></p>
@@ -39,18 +43,18 @@
 ### Cores, tamanhos e espaçamentos
 ```css
 body {
-  background-color: #f2f2f2; /* Cor de fundo */
-  color: black;              /* Cor do texto */
-  padding: 10px;             /* Espaço interno */
-  margin: 0;                 /* Remove espaço externo */
+  background-color: #f2f2f2;
+  color: black;
+  padding: 10px;
+  margin: 0;
 }
 ```
 
 ### Bordas e cantos arredondados
 ```css
 .caixa {
-  border: 1px solid #333;   /* Borda fina com cor */
-  border-radius: 8px;       /* Arredonda os cantos */
+  border: 1px solid #333;
+  border-radius: 8px;
   padding: 10px;
 }
 ```
@@ -58,22 +62,22 @@ body {
 ### Flexbox - Layout Responsivo
 ```css
 .container {
-  display: flex;                   /* Ativa o modo Flex */
-  justify-content: center;        /* Alinha horizontalmente */
-  align-items: center;            /* Alinha verticalmente */
-  height: 100vh;                  /* Altura total da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 ```
 
 ### Pseudoclasses (interação com mouse)
 ```css
 button:hover {
-  background-color: blue; /* Muda a cor ao passar o mouse */
+  background-color: blue;
   color: white;
 }
 
 button:active {
-  transform: scale(0.98);  /* Efeito ao clicar */
+  transform: scale(0.98);
 }
 ```
 
@@ -126,14 +130,14 @@ button a {
 
 ### Selecionar e modificar elementos HTML
 ```js
-let titulo = document.getElementById("titulo"); // Seleciona elemento com id="titulo"
-titulo.innerHTML = "Novo texto";               // Altera conteúdo interno
-imagem.setAttribute("src", "ligada.avif");     // Altera atributo da imagem
+let titulo = document.getElementById("titulo");
+titulo.innerHTML = "Novo texto";
+imagem.setAttribute("src", "ligada.avif");
 ```
 
 ### Eventos e interações com botões
 ```js
-botao.addEventListener("click", imprimir); // Ao clicar no botão, executa a função
+botao.addEventListener("click", imprimir);
 
 function imprimir() {
   resposta.innerText = "Perdeu playboy";
@@ -147,6 +151,35 @@ function mostrarMensagem() {
   document.getElementById("saida").innerText = "Você digitou: " + entrada;
 }
 ```
+
+### Funções como parâmetros
+- É possível passar funções como argumentos para outras funções, o que permite maior flexibilidade e reuso de código.
+- **Exemplo 1: setTimeout**
+  ```js
+  function saudacao() {
+    console.log("Olá!");
+  }
+
+  setTimeout(saudacao, 2000); // Executa a função após 2 segundos
+  ```
+- **Exemplo 2: Função anônima passada diretamente**
+  ```js
+  setTimeout(function () {
+    console.log("Executou depois de um tempo");
+  }, 1000);
+  ```
+- **Exemplo 3: Passando função para outra**
+  ```js
+  function executar(callback) {
+    console.log("Início");
+    callback();
+    console.log("Fim");
+  }
+
+  executar(function() {
+    console.log("Função passada como parâmetro");
+  });
+  ```
 
 ### Botão que foge do cursor (efeito divertido)
 ```js
@@ -167,8 +200,8 @@ alert("Olá, " + nome);
 
 ### Variáveis e constantes
 ```js
-let idade = 25;   // Pode mudar
-const PI = 3.14;  // Valor fixo, constante
+let idade = 25;
+const PI = 3.14;
 ```
 
 ### Condições (if / else)
@@ -188,12 +221,12 @@ for (let i = 0; i < lista.length; i++) {
   console.log(lista[i]);
 }
 
-lista.push("Daniela"); // Adiciona no final da lista
+lista.push("Daniela");
 ```
 
 ### Conversão de valores
 ```js
-let numero = parseFloat("12.5"); // Transforma string em número
+let numero = parseFloat("12.5");
 ```
 
 ---
@@ -240,7 +273,7 @@ function atualizarLista() {
     const li = document.createElement("li");
     li.textContent = convidados[i];
     li.onclick = function() {
-      convidados.splice(i, 1); // Remove ao clicar no item
+      convidados.splice(i, 1);
       atualizarLista();
     };
     lista.appendChild(li);
@@ -291,3 +324,4 @@ function divide() {
 ```
 
 ---
+ Bons estudos! ✨
