@@ -2,24 +2,6 @@
 
 ---
 
-## Como usar este README no GitHub
-
-1. **Abra o projeto com Git.**
-2. Crie o arquivo `README.md` (se ainda não existir):
-   ```bash
-   touch README.md
-   ```
-3. Copie e cole este conteúdo no `README.md`.
-4. Salve o arquivo.
-5. Suba para o GitHub com os comandos:
-   ```bash
-   git add README.md
-   git commit -m "Adiciona README para estudo"
-   git push origin main
-   ```
-6. O README aparecerá na página inicial do seu repositório.
-
----
 
 ## HTML - Comandos Importantes
 
